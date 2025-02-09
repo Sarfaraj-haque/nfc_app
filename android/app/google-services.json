@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "193845498725",
+    "firebase_url": "https://nfc-setup-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "nfc-setup",
+    "storage_bucket": "nfc-setup.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193845498725:android:b9c67183c9e73ffb92c78c",
+        "android_client_info": {
+          "package_name": "com.example.nfc_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVN0Ii7C8xMbCKqnXJoNCpNU_77e7ItY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
