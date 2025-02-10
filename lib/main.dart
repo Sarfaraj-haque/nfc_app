@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner: false,
       title: 'NFC App',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: HomeScreen(),

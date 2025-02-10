@@ -11,20 +11,26 @@ class NFCController {
   final FireBaseService fireBaseService = FireBaseService();
 
   Future<void> handleNfcTap() async {
-    String? cardDetails = await nfcService.readNfcTag();
-    if (cardDetails != null) {
-      Map<String, double> location = await locationService.getCurrentLocation();
-      NFCdata data = NFCdata(
-          cardDetails: cardDetails,
-          timeStamp: DateTime.now(),
-          location: location);
-      await fireBaseService.savedNFCData(data);
-    }else{
-      print('no NFC Found');
+    try {
+      String? cardDetails = await nfcService.readNfcTag();
+      if (cardDetails != null) {
+        Map<String, double> location =
+            await locationService.getCurrentLocation();
+        NFCdata data = NFCdata(
+            cardDetails: cardDetails,
+            timeStamp: DateTime.now(),
+            location: location);
+        await fireBaseService.savedNFCData(data);
+        print('NFC Data Saved Successfully');
+      } else {
+        print('no NFC Found');
+      }
+    } catch (e) {
+      print('Error handling NFC tap: $e');
     }
   }
 
-  Stream<QuerySnapshot> getNFCDataStream(){
+  Stream<QuerySnapshot> getNFCDataStream() {
     return fireBaseService.getNFCData();
   }
 }
